@@ -35,3 +35,5 @@
 /config/master.key
 
 .ruby-gemset
+/app/assets/builds/*
+!/app/assets/builds/.keep
