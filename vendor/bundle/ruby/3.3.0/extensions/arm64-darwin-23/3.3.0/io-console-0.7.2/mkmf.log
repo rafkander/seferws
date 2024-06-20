@@ -13,8 +13,8 @@ checked program was:
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -o conftest -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe conftest.c  -L. -L/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -arch arm64   -lruby.3.3  -lpthread  "
 conftest.c:14:57: error: use of undeclared identifier 'rb_io_path'
-int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_path; return !p; }
-                                                        ^
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_path; return !p; }
+      |                                                         ^
 1 error generated.
 checked program was:
 /* begin */
@@ -60,8 +60,8 @@ have_func: checking for rb_io_descriptor()... -------------------- yes
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -o conftest -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe conftest.c  -L. -L/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -arch arm64   -lruby.3.3  -lpthread  "
 conftest.c:14:57: error: use of undeclared identifier 'rb_io_descriptor'
-int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_descriptor; return !p; }
-                                                        ^
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_descriptor; return !p; }
+      |                                                         ^
 1 error generated.
 checked program was:
 /* begin */
@@ -107,8 +107,8 @@ have_func: checking for rb_io_get_write_io()... -------------------- yes
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -o conftest -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe conftest.c  -L. -L/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -arch arm64   -lruby.3.3  -lpthread  "
 conftest.c:14:57: error: use of undeclared identifier 'rb_io_get_write_io'
-int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_get_write_io; return !p; }
-                                                        ^
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_get_write_io; return !p; }
+      |                                                         ^
 1 error generated.
 checked program was:
 /* begin */
@@ -154,8 +154,8 @@ have_func: checking for rb_io_closed_p()... -------------------- yes
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -o conftest -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe conftest.c  -L. -L/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -arch arm64   -lruby.3.3  -lpthread  "
 conftest.c:14:57: error: use of undeclared identifier 'rb_io_closed_p'
-int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_closed_p; return !p; }
-                                                        ^
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_closed_p; return !p; }
+      |                                                         ^
 1 error generated.
 checked program was:
 /* begin */
@@ -201,8 +201,8 @@ have_func: checking for rb_io_open_descriptor()... -------------------- yes
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -o conftest -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe conftest.c  -L. -L/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -arch arm64   -lruby.3.3  -lpthread  "
 conftest.c:14:57: error: use of undeclared identifier 'rb_io_open_descriptor'
-int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_open_descriptor; return !p; }
-                                                        ^
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_open_descriptor; return !p; }
+      |                                                         ^
 1 error generated.
 checked program was:
 /* begin */
@@ -246,11 +246,11 @@ checked program was:
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe -arch arm64  -c conftest.c"
 conftest.c:5:3: error: 
-# error
-  ^
+    5 | # error
+      |   ^
 conftest.c:6:1: error: expected identifier or '('
-|:/ === _WIN32 undefined === /:|
-^
+    6 | |:/ === _WIN32 undefined === /:|
+      | ^
 2 errors generated.
 checked program was:
 /* begin */

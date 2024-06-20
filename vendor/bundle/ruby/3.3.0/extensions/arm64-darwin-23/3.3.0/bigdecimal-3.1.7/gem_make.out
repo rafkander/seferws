@@ -1,4 +1,4 @@
-current directory: /Users/RealAcc/Desktop/seferswap/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
 /Users/RealAcc/.rvm/rubies/ruby-3.3.0/bin/ruby extconf.rb
 checking for __builtin_clz()... yes
 checking for __builtin_clzl()... yes
@@ -31,18 +31,18 @@ checking for rb_category_warn() in ruby.h... yes
 checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
-current directory: /Users/RealAcc/Desktop/seferswap/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20240503-54321-q193ii sitelibdir\=./.gem.20240503-54321-q193ii clean
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20240620-16267-v0zwsw sitelibdir\=./.gem.20240620-16267-v0zwsw clean
 
-current directory: /Users/RealAcc/Desktop/seferswap/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20240503-54321-q193ii sitelibdir\=./.gem.20240503-54321-q193ii
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20240620-16267-v0zwsw sitelibdir\=./.gem.20240620-16267-v0zwsw
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.bundle
 
-current directory: /Users/RealAcc/Desktop/seferswap/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20240503-54321-q193ii sitelibdir\=./.gem.20240503-54321-q193ii install
-/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 bigdecimal.bundle ./.gem.20240503-54321-q193ii
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20240620-16267-v0zwsw sitelibdir\=./.gem.20240620-16267-v0zwsw install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 bigdecimal.bundle ./.gem.20240620-16267-v0zwsw
 
-current directory: /Users/RealAcc/Desktop/seferswap/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20240503-54321-q193ii sitelibdir\=./.gem.20240503-54321-q193ii clean
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20240620-16267-v0zwsw sitelibdir\=./.gem.20240620-16267-v0zwsw clean

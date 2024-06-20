@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login To Sefer Swap</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -82,25 +77,24 @@
       text-decoration: underline;
     }
   </style>
-</head>
-<body>
-  <div class="login-container">
-    <h2>Login To Sefer Swap</h2>
-    <form method="POST" action="/users/sign_in">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="user[email]" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="user[password]" required>
-      </div>
-      <button type="submit" class="btn">Login</button>
-    </form>
-    <div class="links">
-      <a href="/users/sign_up">Sign Up</a>
-      <a href="/users/password/new">Forgot Password?</a>
+<div class="login-container">
+  <h2>Login To Sefer Swap</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-group">
+      <p><%= f.label :email %></p>
+      <p><%= f.email_field :email, autofocus: true, autocomplete: "email" %></p>
     </div>
+
+    <div class="form-group">
+      <p><%= f.label :password %></p>
+      <p><%= f.password_field :password, autocomplete: "current-password" %></p>
+    </div>
+
+    <%= f.submit "Log in", class: "btn" %>
+  <% end %>
+  
+  <div class="links">
+    <%= render "devise/shared/links" %>
   </div>
-</body>
-</html>
+</div>
