@@ -25,8 +25,8 @@ have_func: checking for rb_io_descriptor()... -------------------- yes
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -o conftest -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe conftest.c  -L. -L/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib -L. -L/opt/homebrew/opt/libyaml/lib -L/opt/homebrew/opt/libksba/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@1.1/lib -fstack-protector-strong  -arch arm64   -lruby.3.3  -lpthread  "
 conftest.c:14:57: error: use of undeclared identifier 'rb_io_descriptor'
-int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_descriptor; return !p; }
-                                                        ^
+   14 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_io_descriptor; return !p; }
+      |                                                         ^
 1 error generated.
 checked program was:
 /* begin */
@@ -72,8 +72,8 @@ have_header: checking for linux/aio_abi.h... -------------------- no
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe -arch arm64  -c conftest.c"
 conftest.c:3:10: fatal error: 'linux/aio_abi.h' file not found
-#include <linux/aio_abi.h>
-         ^~~~~~~~~~~~~~~~~
+    3 | #include <linux/aio_abi.h>
+      |          ^~~~~~~~~~~~~~~~~
 1 error generated.
 checked program was:
 /* begin */
@@ -88,8 +88,8 @@ have_header: checking for linux/io_uring.h... -------------------- no
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe -arch arm64  -c conftest.c"
 conftest.c:3:10: fatal error: 'linux/io_uring.h' file not found
-#include <linux/io_uring.h>
-         ^~~~~~~~~~~~~~~~~~
+    3 | #include <linux/io_uring.h>
+      |          ^~~~~~~~~~~~~~~~~~
 1 error generated.
 checked program was:
 /* begin */
@@ -116,8 +116,8 @@ have_type: checking for port_event_t in poll.h... -------------------- no
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe -arch arm64  -c conftest.c"
 conftest.c:6:9: error: unknown type name 'port_event_t'
-typedef port_event_t conftest_type;
-        ^
+    6 | typedef port_event_t conftest_type;
+      |         ^
 1 error generated.
 checked program was:
 /* begin */
@@ -136,8 +136,8 @@ have_header: checking for sys/epoll.h... -------------------- no
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe -arch arm64  -c conftest.c"
 conftest.c:3:10: fatal error: 'sys/epoll.h' file not found
-#include <sys/epoll.h>
-         ^~~~~~~~~~~~~
+    3 | #include <sys/epoll.h>
+      |          ^~~~~~~~~~~~~
 1 error generated.
 checked program was:
 /* begin */
@@ -176,8 +176,8 @@ have_type: checking for port_event_t in port.h... -------------------- no
 
 DYLD_LIBRARY_PATH=.:/Users/RealAcc/.rvm/rubies/ruby-3.3.0/lib "gcc -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/arm64-darwin23 -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0/ruby/backward -I/Users/RealAcc/.rvm/rubies/ruby-3.3.0/include/ruby-3.3.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -O3 -I/opt/homebrew/opt/libyaml/include -I/opt/homebrew/opt/libksba/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@1.1/include -fdeclspec -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wextra-tokens -Wdeprecated-declarations -Wdivision-by-zero -Wdiv-by-zero -Wimplicit-function-declaration -Wimplicit-int -Wpointer-arith -Wshorten-64-to-32 -Wwrite-strings -Wold-style-definition -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wunused-variable -Wmisleading-indentation -Wundef -fno-common -pipe -arch arm64  -c conftest.c"
 conftest.c:3:10: fatal error: 'port.h' file not found
-#include <port.h>
-         ^~~~~~~~
+    3 | #include <port.h>
+      |          ^~~~~~~~
 1 error generated.
 checked program was:
 /* begin */

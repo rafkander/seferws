@@ -1,0 +1,18 @@
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/racc-1.8.0/ext/racc/cparse
+/Users/RealAcc/.rvm/rubies/ruby-3.3.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240606-32705-vto69f sitelibdir\=./.gem.20240606-32705-vto69f clean
+
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240606-32705-vto69f sitelibdir\=./.gem.20240606-32705-vto69f
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240606-32705-vto69f sitelibdir\=./.gem.20240606-32705-vto69f install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20240606-32705-vto69f/racc
+
+current directory: /Users/RealAcc/Desktop/seferws/vendor/bundle/ruby/3.3.0/gems/racc-1.8.0/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20240606-32705-vto69f sitelibdir\=./.gem.20240606-32705-vto69f clean

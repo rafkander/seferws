@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = "3.5.3".freeze
   s.summary = "Email composition and delivery framework (part of Rails).".freeze
 
-  s.installed_by_version = "3.5.3".freeze if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.5.11".freeze if s.respond_to? :installed_by_version
 
   s.specification_version = 4
 
