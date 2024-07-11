@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  
+
+<yeild>
     <title>Seferswap</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -9,26 +9,14 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
+  </head>  
   
-
-
-
-
+  <body>
   
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-      <div>
-        <%# if user_signed_in? %>
-          <%#= link_to "Profile", edit_user_registration_path %>
-          <%#= button_to "Logout", destroy_user_session_path, method: :delete %>
-          <%# else %>
-            <%#= link_to "Login", new_user_session_path %>
-            <%#= link_to "Sign up", new_user_registration_path %>
-        <%# end %>
-      </div> 
+    <%= render "layouts/header" %>
+    
     
     <%= yield %>
   </body>
