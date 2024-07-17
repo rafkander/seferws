@@ -35,42 +35,6 @@
   </style>
 </head>
 
-<body>
-
-
-<!-- NavBar va a todo lo ancho -->
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://SeferSwap.uk">
-    <%= image_tag ("Logos/SeferSwapLogo.png") %>      </a>
-  </div>
-
-  <div class="navbar-menu">
-
-    <div class="navbar-end">
-      <a class="navbar-item" href="https://buy.stripe.com/14k3cV4fN8FufXq3ce">
-        DONATE
-      </a>
-      <a class="navbar-item">
-        LIST A SEFOR
-      </a>
-
-
-
-       <div class="navbar-item">
-        <% if user_signed_in? %>
-        <%= link_to "Settings", edit_user_registration_path %>
-
-          <% else %>
-          <%= link_to "Login ", new_user_session_path %>
-          <%= link_to "/Sign up", new_user_registration_path %>
-        <% end %>
-      </div>
-
-
-      </div>
-  </div>
-</nav>
 
 <!-- Hero del producto -->
 <section class="hero is-white is-fullheight">
