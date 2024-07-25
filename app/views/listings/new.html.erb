@@ -133,71 +133,64 @@
         <h1>List A Sefer</h1>
     </header>
     <div class="container">
-        <form action="upload.php" method="POST" enctype="multipart/form-data">
-            <label for="title">Sefer Name:</label>
-            <input type="text" id="title" name="title" placeholder="Name of your sefer" required>
+        <%= form_with model: @listing, local: true, html: { multipart: true } do |form| %>
+            <%= form.label :sefer_name, "Sefer Name:" %>
+            <%= form.text_field :sefer_name, placeholder: "Name of your sefer", required: true %>
 
-            <label for="category">Sefer Category:</label>
-            <select id="category" name="category" required>
-                <option value="">Select Your Category</option>
-                <option value="Sefer">Sefer</option>
-            </select>
+            <%= form.label :category, "Sefer Category:" %>
+            <%= form.select :category, options_for_select([['Select Your Category', ''], ['Sefer', 'Sefer']], selected: ''), required: true %>
 
-            <label for="name">Sefer Language:</label>
-            <input type="language" id="language" name="language" placeholder="What language is the sefer in" required>
+            <%= form.label :language, "Sefer Language:" %>
+            <%= form.text_field :language, placeholder: "What language is the sefer in", required: true %>
 
-            <label for="set-checkbox">Is this part of a set:</label>
-            <input type="checkbox" id="set-checkbox" name="set-checkbox">
+            <%= form.label :set_checkbox, "Is this part of a set:" %>
+            <%= form.check_box :set_checkbox %>
 
             <div id="set-details">
-                <label for="set">Set Details:</label>
-                <input type="text" id="set" name="set" placeholder="Include the set details">
+                <%= form.label :set, "Set Details:" %>
+                <%= form.text_field :set, placeholder: "Include the set details" %>
             </div>
 
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+            <%= form.label :name, "Your Name:" %>
+            <%= form.text_field :name, placeholder: "Enter Your Name", required: true %>
 
-            <label for="location">Sefer Location:</label>
-            <input type="text" id="location" name="location" placeholder="E.G Post Code And Area" required>
+            <%= form.label :location, "Sefer Location:" %>
+            <%= form.text_field :location, placeholder: "E.G Post Code And Area", required: true %>
 
-        
-
-            <label for="condition" class="slider-label">Condition:</label>
+            <%= form.label :condition, "Condition:", class: "slider-label" %>
             <div class="slider-container">
-                <input type="range" id="condition" name="condition" min="1" max="4" value="2" step="1" class="slider-input">
+                <%= form.range_field :condition, min: 1, max: 4, value: 2, step: 1, class: "slider-input" %>
                 <span id="condition-text" class="slider-text">Like New</span>
             </div>
 
-            <script>
-                const conditionSlider = document.getElementById("condition");
-                const conditionText = document.getElementById("condition-text");
-                const conditions = ["New", "Like New", "Used", "Damaged"];
+            <%= form.label :description, "Description:", class: "description-container" %>
+            <%= form.text_area :description, rows: 4, placeholder: "Provide a detailed description of the sefer", required: true %>
 
-                conditionSlider.addEventListener("input", () => {
-                    conditionText.textContent = conditions[parseInt(conditionSlider.value) - 1];
-                });
-
-                const setCheckbox = document.getElementById('set-checkbox');
-                const setDetails = document.getElementById('set-details');
-
-                setCheckbox.addEventListener('change', () => {
-                    setDetails.style.display = setCheckbox.checked ? 'block' : 'none';
-                });
-            </script>
-
-            <label for="description" class="description-container">Description:</label>
-            <textarea id="description" name="description" rows="4" placeholder="Provide a detailed description of the sefer" required></textarea>
-
-            <label for="cover" class="file-container">Photos Of The Sefer:</label>
-            <input type="file" id="cover" name="cover[]" accept="image/*" multiple required>
+            <%= form.label :cover, "Photos Of The Sefer:", class: "file-container" %>
+            <%= form.file_field :cover, multiple: true, accept: "image/*", required: true %>
 
             <div class="image-preview" id="imagePreview"></div>
 
-            <button type="submit">Upload Sefer</button>
-        </form>
+            <%= form.submit "Upload Sefer", class: "button" %>
+        <% end %>
     </div>
     <script>
-        const coverInput = document.getElementById('cover');
+        const conditionSlider = document.getElementById("condition");
+        const conditionText = document.getElementById("condition-text");
+        const conditions = ["New", "Like New", "Used", "Damaged"];
+
+        conditionSlider.addEventListener("input", () => {
+            conditionText.textContent = conditions[parseInt(conditionSlider.value) - 1];
+        });
+
+        const setCheckbox = document.getElementById('set_checkbox');
+        const setDetails = document.getElementById('set-details');
+
+        setCheckbox.addEventListener('change', () => {
+            setDetails.style.display = setCheckbox.checked ? 'block' : 'none';
+        });
+
+        const coverInput = document.getElementById('listing_cover');
         const imagePreview = document.getElementById('imagePreview');
 
         coverInput.addEventListener('change', function() {
