@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_11_180003) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_25_173522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_11_180003) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.string "sefer_name"
+    t.bigint "category_id"
+    t.string "sefer_language"
+    t.text "set_details"
+    t.string "name"
+    t.string "sefer_location"
+    t.string "sefer_condition"
+    t.text "sefer_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_listings_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
