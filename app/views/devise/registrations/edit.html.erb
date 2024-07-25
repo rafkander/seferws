@@ -29,6 +29,11 @@
   </div>
 
   <div class="field" style="margin-bottom: 15px;">
+    <%= f.label :phone_number %><br />
+    <%= f.telephone_field :phone_number, style: "width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" %>
+  </div>
+
+  <div class="field" style="margin-bottom: 15px;">
     <%= f.label :current_password, style: "color: #555;" %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password", style: "width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;" %>
   </div>
