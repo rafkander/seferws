@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   get 'seforim/new', to: 'seforim#new'
   # Defines the root path route ("/")
    root "landing_page#index"
-
 end
