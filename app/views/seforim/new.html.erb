@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List A Sefer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #080808;
+            color: #fff;
+            padding: 0.2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            background-color: #fff;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+        }
+        label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #0073e6;
+            outline: none;
+        }
+        button {
+            padding: 0.75rem;
+            background-color: #0073e6;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            grid-column: span 2;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        .slider-label {
+            font-weight: bold;
+            color: black;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            grid-column: span 2;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            grid-column: span 2;
+        }
+        .slider-input {
+            width: 20%;
+            margin-right: 10px;
+        }
+        .slider-text {
+            font-weight: bold;
+            color: black;
+            font-size: 1rem;
+        }
+        .description-container, .file-container {
+            grid-column: span 2;
+        }
+        .file-container input[type="file"] {
+            display: none;
+        }
+        .file-container label {
+            padding: 0.75rem;
+            background-color: #0073e6;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .file-container label:hover {
+            background-color: #005bb5;
+        }
+        .image-preview {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .image-preview img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+        #set-details 
+        {
+            display: none;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>List A Sefer</h1>
+    </header>
+    <div class="container">
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <label for="title">Sefer Name:</label>
+            <input type="text" id="title" name="title" placeholder="Name of your sefer" required>
+
+            <label for="category">Sefer Category:</label>
+            <select id="category" name="category" required>
+                <option value="">Select Your Category</option>
+                <option value="Sefer">Sefer</option>
+            </select>
+
+            <label for="name">Sefer Language:</label>
+            <input type="language" id="language" name="language" placeholder="What language is the sefer in" required>
+
+            <label for="set-checkbox">Is this part of a set:</label>
+            <input type="checkbox" id="set-checkbox" name="set-checkbox">
+
+            <div id="set-details">
+                <label for="set">Set Details:</label>
+                <input type="text" id="set" name="set" placeholder="Include the set details">
+            </div>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+
+            <label for="location">Sefer Location:</label>
+            <input type="text" id="location" name="location" placeholder="E.G Post Code And Area" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+
+            <label for="condition" class="slider-label">Condition:</label>
+            <div class="slider-container">
+                <input type="range" id="condition" name="condition" min="1" max="4" value="2" step="1" class="slider-input">
+                <span id="condition-text" class="slider-text">Like New</span>
+            </div>
+
+            <script>
+                const conditionSlider = document.getElementById("condition");
+                const conditionText = document.getElementById("condition-text");
+                const conditions = ["New", "Like New", "Used", "Damaged"];
+
+                conditionSlider.addEventListener("input", () => {
+                    conditionText.textContent = conditions[parseInt(conditionSlider.value) - 1];
+                });
+
+                const setCheckbox = document.getElementById('set-checkbox');
+                const setDetails = document.getElementById('set-details');
+
+                setCheckbox.addEventListener('change', () => {
+                    setDetails.style.display = setCheckbox.checked ? 'block' : 'none';
+                });
+            </script>
+
+            <label for="description" class="description-container">Description:</label>
+            <textarea id="description" name="description" rows="4" placeholder="Provide a detailed description of the sefer" required></textarea>
+
+            <label for="cover" class="file-container">Photos Of The Sefer:</label>
+            <input type="file" id="cover" name="cover[]" accept="image/*" multiple required>
+
+            <div class="image-preview" id="imagePreview"></div>
+
+            <button type="submit">Upload Sefer</button>
+        </form>
+    </div>
+    <script>
+        const coverInput = document.getElementById('cover');
+        const imagePreview = document.getElementById('imagePreview');
+
+        coverInput.addEventListener('change', function() {
+            imagePreview.innerHTML = '';
+            const files = coverInput.files;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    imagePreview.appendChild(img);
+                }
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
