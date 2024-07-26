@@ -7,6 +7,7 @@ class ListingsController < ApplicationController
 
     def create
       puts "hey you got to the create method"
-      
+   
+
     end
   end
