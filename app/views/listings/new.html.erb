@@ -121,8 +121,7 @@
             margin-right: 1rem;
             margin-bottom: 1rem;
         }
-        #set-details 
-        {
+        #set-details {
             display: none;
             grid-column: span 2;
         }
@@ -137,18 +136,18 @@
             <%= form.label :sefer_name, "Sefer Name:" %>
             <%= form.text_field :sefer_name, placeholder: "Name of your sefer", required: true %>
 
-            <%= form.label :category, "Sefer Category:" %>
-            <%= form.select :category, options_for_select([['Select Your Category', ''], ['Sefer', 'Sefer']], selected: ''), required: true %>
+            <%= form.label :category_id, "Sefer Category:" %>
+            <%= form.select :category_id, options_for_select(Category.all.map { |c| [c.name, c.id] }, selected: ''), required: true %>
 
             <%= form.label :language, "Sefer Language:" %>
-            <%= form.text_field :language, placeholder: "What language is the sefer in", required: true %>
+            <%= form.text_field :language, placeholder: "What language is the sefer in (E.G: Hebrew, English)", required: true %>
 
-            <%= form.label :set_checkbox, "Is this part of a set:" %>
-            <%= form.check_box :set_checkbox %>
+            <%= form.label :set_checkbox, "Is this sefer part of a set:" %>
+            <%= form.check_box :set_checkbox, id: 'listing_set_checkbox' %>
 
             <div id="set-details">
-                <%= form.label :set, "Set Details:" %>
-                <%= form.text_field :set, placeholder: "Include the set details" %>
+                <%= form.label :set, "Are you listing more then one sefer in a set?" %>
+                <%= form.text_field :set, placeholder: "Include any other seforim inclued in this set listing", required: false %>
             </div>
 
             <%= form.label :name, "Your Name:" %>
@@ -159,7 +158,7 @@
 
             <%= form.label :condition, "Condition:", class: "slider-label" %>
             <div class="slider-container">
-                <%= form.range_field :condition, min: 1, max: 4, value: 2, step: 1, class: "slider-input" %>
+                <%= form.range_field :condition, min: 1, max: 4, value: 2, step: 1, class: "slider-input", id: 'listing_condition' %>
                 <span id="condition-text" class="slider-text">Like New</span>
             </div>
 
@@ -167,7 +166,7 @@
             <%= form.text_area :description, rows: 4, placeholder: "Provide a detailed description of the sefer", required: true %>
 
             <%= form.label :cover, "Photos Of The Sefer:", class: "file-container" %>
-            <%= form.file_field :cover, multiple: true, accept: "image/*", required: true %>
+            <%= form.file_field :cover, multiple: true, accept: "image/*", required: true, id: 'listing_cover' %>
 
             <div class="image-preview" id="imagePreview"></div>
 
@@ -175,40 +174,42 @@
         <% end %>
     </div>
     <script>
-        const conditionSlider = document.getElementById("condition");
-        const conditionText = document.getElementById("condition-text");
-        const conditions = ["New", "Like New", "Used", "Damaged"];
+        document.addEventListener('DOMContentLoaded', function() {
+            const conditionSlider = document.getElementById("listing_condition");
+            const conditionText = document.getElementById("condition-text");
+            const conditions = ["New", "Like New", "Used", "Damaged"];
 
-        conditionSlider.addEventListener("input", () => {
-            conditionText.textContent = conditions[parseInt(conditionSlider.value) - 1];
-        });
+            conditionSlider.addEventListener("input", () => {
+                conditionText.textContent = conditions[parseInt(conditionSlider.value) - 1];
+            });
 
-        const setCheckbox = document.getElementById('set_checkbox');
-        const setDetails = document.getElementById('set-details');
+            const setCheckbox = document.getElementById('listing_set_checkbox');
+            const setDetails = document.getElementById('set-details');
 
-        setCheckbox.addEventListener('change', () => {
-            setDetails.style.display = setCheckbox.checked ? 'block' : 'none';
-        });
+            setCheckbox.addEventListener('change', () => {
+                setDetails.style.display = setCheckbox.checked ? 'block' : 'none';
+            });
 
-        const coverInput = document.getElementById('listing_cover');
-        const imagePreview = document.getElementById('imagePreview');
+            const coverInput = document.getElementById('listing_cover');
+            const imagePreview = document.getElementById('imagePreview');
 
-        coverInput.addEventListener('change', function() {
-            imagePreview.innerHTML = '';
-            const files = coverInput.files;
+            coverInput.addEventListener('change', function() {
+                imagePreview.innerHTML = '';
+                const files = coverInput.files;
 
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                const reader = new FileReader();
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const reader = new FileReader();
 
-                reader.onload = function(e) {
-                    const img = document.createElement('img');
-                    img.src = e.target.result;
-                    imagePreview.appendChild(img);
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        imagePreview.appendChild(img);
+                    }
+
+                    reader.readAsDataURL(file);
                 }
-
-                reader.readAsDataURL(file);
-            }
+            });
         });
     </script>
 </body>
