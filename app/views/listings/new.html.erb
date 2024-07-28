@@ -142,8 +142,8 @@
             <%= form.label :language, "Sefer Language:" %>
             <%= form.text_field :language, placeholder: "What language is the sefer in (E.G: Hebrew, English)", required: true %>
 
-            <%= form.label :set_checkbox, "Is this sefer part of a set:" %>
-            <%= form.check_box :set_checkbox, id: 'listing_set_checkbox' %>
+            <%= form.label :set_checkbox, "Is this part of a set:" %>
+            <%= form.check_box :set_checkbox %>
 
             <div id="set-details">
                 <%= form.label :set, "Are you listing more then one sefer in a set?" %>
