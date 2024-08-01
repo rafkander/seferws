@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_28_152525) do
   create_table "listings", force: :cascade do |t|
     t.string "sefer_name"
     t.bigint "category_id"
+    t.string "edition"
     t.string "sefer_language"
     t.text "set_details"
     t.string "name"
