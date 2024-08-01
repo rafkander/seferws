@@ -3,6 +3,7 @@ class CreateListings < ActiveRecord::Migration[7.1]
     create_table :listings do |t|
       t.string :sefer_name
       t.belongs_to :category, index: true
+      t.string :edition
       t.string :sefer_language
       t.text :set_details
       t.string :name

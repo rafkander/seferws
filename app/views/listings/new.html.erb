@@ -44,7 +44,7 @@
             font-size: 1rem;
             width: 100%;
             box-sizing: border-box;
-            border: 1px solid #ccc;
+            border: 1px solid black; /* Black border added */
             border-radius: 5px;
             transition: border-color 0.3s;
         }
@@ -125,7 +125,11 @@
             display: none;
             grid-column: span 2;
         }
+        .select2-container {
+            width: 100% !important;
+        }
     </style>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -137,13 +141,16 @@
             <%= form.text_field :sefer_name, placeholder: "Name of your sefer", required: true %>
 
             <%= form.label :category_id, "Sefer Category:" %>
-            <%= form.select :category_id, options_for_select(Category.all.map { |c| [c.name, c.id] }, selected: ''), required: true %>
+            <%= form.select :category_id, options_for_select(Category.all.map { |c| [c.name, c.id] }, selected: ''), { prompt: "Select a category" }, { id: "category-select", class: "select2" } %>
 
+            <%= form.label :edition, "Sefer Edition:" %>
+            <%= form.text_field :sefer_name, placeholder: "Sefer Edition", required: true %>
+            
             <%= form.label :language, "Sefer Language:" %>
             <%= form.text_field :language, placeholder: "What language is the sefer in (E.G: Hebrew, English)", required: true %>
 
-            <%= form.label :set_checkbox, "Is this part of a set:" %>
-            <%= form.check_box :set_checkbox %>
+            <%= form.label :set_checkbox, "Is this sefer part of a set:" %>
+            <%= form.check_box :set_checkbox, id: 'listing_set_checkbox' %>
 
             <div id="set-details">
                 <%= form.label :set, "Are you listing more then one sefer in a set?" %>
@@ -173,8 +180,11 @@
             <%= form.submit "Upload Sefer", class: "button" %>
         <% end %>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
             const conditionSlider = document.getElementById("listing_condition");
             const conditionText = document.getElementById("condition-text");
             const conditions = ["New", "Like New", "Used", "Damaged"];
@@ -210,6 +220,48 @@
                     reader.readAsDataURL(file);
                 }
             });
+=======
+            $('#category-select').select2({
+                placeholder: "Select a category",
+                allowClear: true
+            });
+
+            const conditionSlider = document.getElementById("listing_condition");
+            const conditionText = document.getElementById("condition-text");
+            const conditions = ["New", "Like New", "Used", "Damaged"];
+
+            conditionSlider.addEventListener("input", () => {
+                conditionText.textContent = conditions[parseInt(conditionSlider.value) - 1];
+            });
+
+            const coverInput = document.getElementById('listing_cover');
+            const imagePreview = document.getElementById('imagePreview');
+
+            coverInput.addEventListener('change', function() {
+                imagePreview.innerHTML = '';
+                const files = coverInput.files;
+
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        imagePreview.appendChild(img);
+                    }
+
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            const setCheckbox = document.getElementById('listing_set_checkbox');
+            const setDetails = document.getElementById('set-details');
+
+            setCheckbox.addEventListener('change', function() {
+                setDetails.style.display = setCheckbox.checked ? 'block' : 'none';
+            });
+>>>>>>> 428b31c (changed the new.html.erb file so the js works)
         });
     </script>
 </body>
