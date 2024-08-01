@@ -44,7 +44,7 @@
             font-size: 1rem;
             width: 100%;
             box-sizing: border-box;
-            border: 1px solid black; /* Black border added */
+            border: 1px solid black;
             border-radius: 5px;
             transition: border-color 0.3s;
         }
@@ -121,7 +121,7 @@
             margin-right: 1rem;
             margin-bottom: 1rem;
         }
-        #set-details {
+        .set-details {
             display: none;
             grid-column: span 2;
         }
@@ -143,37 +143,37 @@
             <%= form.label :category_id, "Sefer Category:" %>
             <%= form.select :category_id, options_for_select(Category.all.map { |c| [c.name, c.id] }, selected: ''), { prompt: "Select a category" }, { id: "category-select", class: "select2" } %>
 
-            <%= form.label :edition, "Sefer Edition:" %>
-            <%= form.text_field :sefer_name, placeholder: "Sefer Edition", required: true %>
+            <%= form.label :edition, "Sefer Publisher:" %>
+            <%= form.text_field :edition, placeholder: "EG: Artscroll", required: true %>
             
-            <%= form.label :language, "Sefer Language:" %>
-            <%= form.text_field :language, placeholder: "What language is the sefer in (E.G: Hebrew, English)", required: true %>
+            <%= form.label :sefer_language, "Sefer Language:" %>
+            <%= form.text_field :sefer_language, placeholder: "What language is the sefer in (E.G: Hebrew, English)", required: true %>
 
             <%= form.label :set_checkbox, "Is this sefer part of a set:" %>
             <%= form.check_box :set_checkbox, id: 'listing_set_checkbox' %>
 
-            <div id="set-details">
-                <%= form.label :set, "Are you listing more then one sefer in a set?" %>
-                <%= form.text_field :set, placeholder: "Include any other seforim inclued in this set listing", required: false %>
+            <div id="set-details" class="set-details">
+                <%= form.label :set_details, "Are you listing more than one sefer in a set?" %>
+                <%= form.text_field :set_details, placeholder: "Include any other seforim included in this set listing", required: false %>
             </div>
 
             <%= form.label :name, "Your Name:" %>
             <%= form.text_field :name, placeholder: "Enter Your Name", required: true %>
 
-            <%= form.label :location, "Sefer Location:" %>
-            <%= form.text_field :location, placeholder: "E.G Post Code And Area", required: true %>
+            <%= form.label :sefer_location, "Sefer Location:" %>
+            <%= form.text_field :sefer_location, placeholder: "E.G Post Code And Area", required: true %>
 
-            <%= form.label :condition, "Condition:", class: "slider-label" %>
+            <%= form.label :sefer_condition, "Condition:", class: "slider-label" %>
             <div class="slider-container">
                 <%= form.range_field :condition, min: 1, max: 4, value: 2, step: 1, class: "slider-input", id: 'listing_condition' %>
                 <span id="condition-text" class="slider-text">Like New</span>
             </div>
 
-            <%= form.label :description, "Description:", class: "description-container" %>
-            <%= form.text_area :description, rows: 4, placeholder: "Provide a detailed description of the sefer", required: true %>
+            <%= form.label :sefer_description, "Description:", class: "description-container" %>
+            <%= form.text_area :sefer_description, rows: 4, placeholder: "Provide a detailed description of the sefer", required: true %>
 
             <%= form.label :cover, "Photos Of The Sefer:", class: "file-container" %>
-            <%= form.file_field :cover, multiple: true, accept: "image/*", required: true, id: 'listing_cover' %>
+            <%= form.file_field :cover, multiple: true, accept: "image/*", required: false, id: 'listing_cover' %>
 
             <div class="image-preview" id="imagePreview"></div>
 
@@ -183,7 +183,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        $(document).ready(function() {
             $('#category-select').select2({
                 placeholder: "Select a category",
                 allowClear: true
@@ -193,7 +193,7 @@
             const conditionText = document.getElementById("condition-text");
             const conditions = ["New", "Like New", "Used", "Damaged"];
 
-            conditionSlider.addEventListener("input", () => {
+            conditionSlider.addEventListener("input", function() {
                 conditionText.textContent = conditions[parseInt(conditionSlider.value) - 1];
             });
 
