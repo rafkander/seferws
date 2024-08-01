@@ -136,18 +136,18 @@
             <%= form.label :sefer_name, "Sefer Name:" %>
             <%= form.text_field :sefer_name, placeholder: "Name of your sefer", required: true %>
 
-            <%= form.label :category, "Sefer Category:" %>
-            <%= form.select :category, options_for_select([['Select Your Category', ''], ['Sefer', 'Sefer']], selected: ''), required: true %>
+            <%= form.label :category_id, "Sefer Category:" %>
+            <%= form.select :category_id, options_for_select(Category.all.map { |c| [c.name, c.id] }, selected: ''), required: true %>
 
             <%= form.label :language, "Sefer Language:" %>
-            <%= form.text_field :language, placeholder: "What language is the sefer in", required: true %>
+            <%= form.text_field :language, placeholder: "What language is the sefer in (E.G: Hebrew, English)", required: true %>
 
             <%= form.label :set_checkbox, "Is this part of a set:" %>
-            <%= form.check_box :set_checkbox, id: 'listing_set_checkbox' %>
+            <%= form.check_box :set_checkbox %>
 
             <div id="set-details">
-                <%= form.label :set, "Set Details:" %>
-                <%= form.text_field :set, placeholder: "Include the set details" %>
+                <%= form.label :set, "Are you listing more then one sefer in a set?" %>
+                <%= form.text_field :set, placeholder: "Include any other seforim inclued in this set listing", required: false %>
             </div>
 
             <%= form.label :name, "Your Name:" %>
