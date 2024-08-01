@@ -184,43 +184,6 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-<<<<<<< HEAD
-            const conditionSlider = document.getElementById("listing_condition");
-            const conditionText = document.getElementById("condition-text");
-            const conditions = ["New", "Like New", "Used", "Damaged"];
-
-            conditionSlider.addEventListener("input", () => {
-                conditionText.textContent = conditions[parseInt(conditionSlider.value) - 1];
-            });
-
-            const setCheckbox = document.getElementById('listing_set_checkbox');
-            const setDetails = document.getElementById('set-details');
-
-            setCheckbox.addEventListener('change', () => {
-                setDetails.style.display = setCheckbox.checked ? 'block' : 'none';
-            });
-
-            const coverInput = document.getElementById('listing_cover');
-            const imagePreview = document.getElementById('imagePreview');
-
-            coverInput.addEventListener('change', function() {
-                imagePreview.innerHTML = '';
-                const files = coverInput.files;
-
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
-                    const reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        const img = document.createElement('img');
-                        img.src = e.target.result;
-                        imagePreview.appendChild(img);
-                    }
-
-                    reader.readAsDataURL(file);
-                }
-            });
-=======
             $('#category-select').select2({
                 placeholder: "Select a category",
                 allowClear: true
@@ -261,7 +224,6 @@
             setCheckbox.addEventListener('change', function() {
                 setDetails.style.display = setCheckbox.checked ? 'block' : 'none';
             });
->>>>>>> 428b31c (changed the new.html.erb file so the js works)
         });
     </script>
 </body>
